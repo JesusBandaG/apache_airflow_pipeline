@@ -1,0 +1,20 @@
+[2023-05-04T07:44:59.332+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_data_pipeline.download_file scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-05-04T07:44:59.350+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_data_pipeline.download_file scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-05-04T07:44:59.352+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 3
+[2023-05-04T07:44:59.381+0000] {taskinstance.py:1350} INFO - Executing <Task(BashOperator): download_file> on 2023-01-01 00:00:00+00:00
+[2023-05-04T07:44:59.394+0000] {standard_task_runner.py:57} INFO - Started process 21599 to run task
+[2023-05-04T07:44:59.401+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_data_pipeline', 'download_file', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpk3bspibd']
+[2023-05-04T07:44:59.403+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask download_file
+[2023-05-04T07:44:59.510+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_data_pipeline.download_file scheduled__2023-01-01T00:00:00+00:00 [running]> on host 1ae395992ef5
+[2023-05-04T07:44:59.703+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Jesus Banda' AIRFLOW_CTX_DAG_ID='dag_data_pipeline' AIRFLOW_CTX_TASK_ID='download_file' AIRFLOW_CTX_EXECUTION_DATE='2023-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-01T00:00:00+00:00'
+[2023-05-04T07:44:59.706+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-05-04T07:44:59.708+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -o /opt/***/dags/data/titanic.csv  https://raw.githubusercontent.com/JesusBandaG/apache_***_pipeline/main/titanic.csv']
+[2023-05-04T07:44:59.740+0000] {subprocess.py:86} INFO - Output:
+[2023-05-04T07:44:59.768+0000] {subprocess.py:93} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2023-05-04T07:44:59.769+0000] {subprocess.py:93} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2023-05-04T07:45:00.266+0000] {subprocess.py:93} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 60301  100 60301    0     0   118k      0 --:--:-- --:--:-- --:--:--  118k
+[2023-05-04T07:45:00.273+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-05-04T07:45:00.333+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=dag_data_pipeline, task_id=download_file, execution_date=20230101T000000, start_date=20230504T074459, end_date=20230504T074500
+[2023-05-04T07:45:00.377+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-04T07:45:00.448+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

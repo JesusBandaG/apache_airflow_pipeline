@@ -1,0 +1,18 @@
+[2023-05-04T08:07:47.315+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_data_pipeline.validator manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:07:47.329+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_data_pipeline.validator manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:07:47.330+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 3
+[2023-05-04T08:07:47.352+0000] {taskinstance.py:1350} INFO - Executing <Task(SqlSensor): validator> on 2023-05-04 08:06:34.198063+00:00
+[2023-05-04T08:07:47.362+0000] {standard_task_runner.py:57} INFO - Started process 670 to run task
+[2023-05-04T08:07:47.368+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_data_pipeline', 'validator', 'manual__2023-05-04T08:06:34.198063+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpclfvz9ru']
+[2023-05-04T08:07:47.369+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask validator
+[2023-05-04T08:07:47.445+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_data_pipeline.validator manual__2023-05-04T08:06:34.198063+00:00 [running]> on host 1ae395992ef5
+[2023-05-04T08:07:47.597+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Jesus Banda' AIRFLOW_CTX_DAG_ID='dag_data_pipeline' AIRFLOW_CTX_TASK_ID='validator' AIRFLOW_CTX_EXECUTION_DATE='2023-05-04T08:06:34.198063+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-04T08:06:34.198063+00:00'
+[2023-05-04T08:07:47.614+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T08:07:47.729+0000] {sql.py:91} INFO - Poking: SELECT COUNT(*) FROM public.master_titanic WHERE load_date = CAST(2023-05-04 AS VARCHAR) (with parameters None)
+[2023-05-04T08:07:47.740+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T08:07:47.760+0000] {sql.py:375} INFO - Running statement: SELECT COUNT(*) FROM public.master_titanic WHERE load_date = CAST(2023-05-04 AS VARCHAR), parameters: None
+[2023-05-04T08:07:47.774+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-05-04T08:07:47.778+0000] {base.py:255} INFO - Success criteria met. Exiting.
+[2023-05-04T08:07:47.796+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=dag_data_pipeline, task_id=validator, execution_date=20230504T080634, start_date=20230504T080747, end_date=20230504T080747
+[2023-05-04T08:07:47.862+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-04T08:07:47.891+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

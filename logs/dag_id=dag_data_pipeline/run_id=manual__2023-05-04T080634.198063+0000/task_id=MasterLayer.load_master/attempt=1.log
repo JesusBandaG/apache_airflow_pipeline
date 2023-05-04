@@ -1,0 +1,91 @@
+[2023-05-04T08:07:42.467+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_data_pipeline.MasterLayer.load_master manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:07:42.481+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_data_pipeline.MasterLayer.load_master manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:07:42.482+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 3
+[2023-05-04T08:07:42.505+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): MasterLayer.load_master> on 2023-05-04 08:06:34.198063+00:00
+[2023-05-04T08:07:42.514+0000] {standard_task_runner.py:57} INFO - Started process 615 to run task
+[2023-05-04T08:07:42.520+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_data_pipeline', 'MasterLayer.load_master', 'manual__2023-05-04T08:06:34.198063+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmp04mq4fy4']
+[2023-05-04T08:07:42.521+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask MasterLayer.load_master
+[2023-05-04T08:07:42.590+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_data_pipeline.MasterLayer.load_master manual__2023-05-04T08:06:34.198063+00:00 [running]> on host 1ae395992ef5
+[2023-05-04T08:07:42.720+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Jesus Banda' AIRFLOW_CTX_DAG_ID='dag_data_pipeline' AIRFLOW_CTX_TASK_ID='MasterLayer.load_master' AIRFLOW_CTX_EXECUTION_DATE='2023-05-04T08:06:34.198063+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-04T08:06:34.198063+00:00'
+[2023-05-04T08:07:42.724+0000] {sql.py:262} INFO - Executing: 
+                INSERT INTO master_titanic (
+                    id, full_name, title, survived, age, generation,
+                    genre, sibling_spouse, parent_child, ticket_price, embarked, load_date, load_datetime
+                )
+                SELECT DISTINCT
+                CAST(passenger_id AS VARCHAR) AS id,
+                CAST(full_name AS VARCHAR) AS full_name,
+                CAST(title AS VARCHAR) AS title,
+                CASE
+                    WHEN survived = 1 THEN 'SURVIVOR'
+                    ELSE 'NOT SURVIVOR'
+                END AS survived,
+                CAST(age AS VARCHAR) AS age,
+                CASE
+                    WHEN age > 18 THEN 'Z Gen'
+                    WHEN age BETWEEN 18 AND 39 THEN 'Millenial'
+                    WHEN age BETWEEN 40 AND 59 THEN 'X Gen'
+                    WHEN age BETWEEN 60 AND 79 THEN 'Baby Boomer'
+                    ELSE 'Older than 80 years'
+                END AS generation,
+                CAST(sex AS VARCHAR) AS genre,
+                CAST(sibsp AS VARCHAR) AS sibling_spouse,
+                CAST(parch AS VARCHAR) AS parent_child,
+                CAST(fare AS VARCHAR) AS ticket_price,
+                CASE
+                    WHEN embarked = 'C' THEN 'Cherbourg'
+                    WHEN embarked = 'Q' THEN 'Queenstown'
+                    WHEN embarked = 'S' THEN 'Southampton'
+                END AS embarked,
+                CAST(2023-05-04 AS VARCHAR) AS load_date,
+                NOW() AS load_datetime
+                FROM public.raw_titanic t
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM master_titanic mt
+                    WHERE mt.id = CAST(t.passenger_id AS VARCHAR)
+                )
+            
+[2023-05-04T08:07:42.739+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T08:07:42.873+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T08:07:42.891+0000] {sql.py:375} INFO - Running statement: 
+                INSERT INTO master_titanic (
+                    id, full_name, title, survived, age, generation,
+                    genre, sibling_spouse, parent_child, ticket_price, embarked, load_date, load_datetime
+                )
+                SELECT DISTINCT
+                CAST(passenger_id AS VARCHAR) AS id,
+                CAST(full_name AS VARCHAR) AS full_name,
+                CAST(title AS VARCHAR) AS title,
+                CASE
+                    WHEN survived = 1 THEN 'SURVIVOR'
+                    ELSE 'NOT SURVIVOR'
+                END AS survived,
+                CAST(age AS VARCHAR) AS age,
+                CASE
+                    WHEN age > 18 THEN 'Z Gen'
+                    WHEN age BETWEEN 18 AND 39 THEN 'Millenial'
+                    WHEN age BETWEEN 40 AND 59 THEN 'X Gen'
+                    WHEN age BETWEEN 60 AND 79 THEN 'Baby Boomer'
+                    ELSE 'Older than 80 years'
+                END AS generation,
+                CAST(sex AS VARCHAR) AS genre,
+                CAST(sibsp AS VARCHAR) AS sibling_spouse,
+                CAST(parch AS VARCHAR) AS parent_child,
+                CAST(fare AS VARCHAR) AS ticket_price,
+                CASE
+                    WHEN embarked = 'C' THEN 'Cherbourg'
+                    WHEN embarked = 'Q' THEN 'Queenstown'
+                    WHEN embarked = 'S' THEN 'Southampton'
+                END AS embarked,
+                CAST(2023-05-04 AS VARCHAR) AS load_date,
+                NOW() AS load_datetime
+                FROM public.raw_titanic t
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM master_titanic mt
+                    WHERE mt.id = CAST(t.passenger_id AS VARCHAR)
+                )
+            , parameters: None
+[2023-05-04T08:07:42.913+0000] {sql.py:384} INFO - Rows affected: 891
+[2023-05-04T08:07:42.941+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=dag_data_pipeline, task_id=MasterLayer.load_master, execution_date=20230504T080634, start_date=20230504T080742, end_date=20230504T080742
+[2023-05-04T08:07:42.974+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-04T08:07:43.012+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

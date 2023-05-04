@@ -1,0 +1,44 @@
+[2023-05-04T07:45:43.833+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_data_pipeline.RawLayer.create_raw scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-05-04T07:45:43.847+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_data_pipeline.RawLayer.create_raw scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-05-04T07:45:43.848+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 3
+[2023-05-04T07:45:43.869+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): RawLayer.create_raw> on 2023-01-01 00:00:00+00:00
+[2023-05-04T07:45:43.878+0000] {standard_task_runner.py:57} INFO - Started process 22018 to run task
+[2023-05-04T07:45:43.883+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_data_pipeline', 'RawLayer.create_raw', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpptm3t9gp']
+[2023-05-04T07:45:43.884+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask RawLayer.create_raw
+[2023-05-04T07:45:43.954+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_data_pipeline.RawLayer.create_raw scheduled__2023-01-01T00:00:00+00:00 [running]> on host 1ae395992ef5
+[2023-05-04T07:45:44.071+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Jesus Banda' AIRFLOW_CTX_DAG_ID='dag_data_pipeline' AIRFLOW_CTX_TASK_ID='RawLayer.create_raw' AIRFLOW_CTX_EXECUTION_DATE='2023-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-01T00:00:00+00:00'
+[2023-05-04T07:45:44.075+0000] {sql.py:262} INFO - Executing: 
+                CREATE TABLE IF NOT EXISTS raw_titanic (
+                    passenger_id VARCHAR(50),
+                    full_name VARCHAR(50),
+                    title VARCHAR(50),
+                    survived INT,
+                    pclass INT,
+                    sex VARCHAR(10),
+                    age FLOAT,
+                    sibsp INT,
+                    parch INT,
+                    fare FLOAT,
+                    embarked VARCHAR(10)
+                )
+            
+[2023-05-04T07:45:44.087+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T07:45:44.257+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T07:45:44.279+0000] {sql.py:375} INFO - Running statement: 
+                CREATE TABLE IF NOT EXISTS raw_titanic (
+                    passenger_id VARCHAR(50),
+                    full_name VARCHAR(50),
+                    title VARCHAR(50),
+                    survived INT,
+                    pclass INT,
+                    sex VARCHAR(10),
+                    age FLOAT,
+                    sibsp INT,
+                    parch INT,
+                    fare FLOAT,
+                    embarked VARCHAR(10)
+                )
+            , parameters: None
+[2023-05-04T07:45:44.316+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=dag_data_pipeline, task_id=RawLayer.create_raw, execution_date=20230101T000000, start_date=20230504T074543, end_date=20230504T074544
+[2023-05-04T07:45:44.378+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-04T07:45:44.431+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

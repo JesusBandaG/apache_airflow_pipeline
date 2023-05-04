@@ -1,0 +1,48 @@
+[2023-05-04T08:07:36.897+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_data_pipeline.MasterLayer.create_master manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:07:36.916+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_data_pipeline.MasterLayer.create_master manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:07:36.917+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 3
+[2023-05-04T08:07:36.948+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): MasterLayer.create_master> on 2023-05-04 08:06:34.198063+00:00
+[2023-05-04T08:07:36.961+0000] {standard_task_runner.py:57} INFO - Started process 560 to run task
+[2023-05-04T08:07:36.967+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_data_pipeline', 'MasterLayer.create_master', 'manual__2023-05-04T08:06:34.198063+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmp2msglkbk']
+[2023-05-04T08:07:36.968+0000] {standard_task_runner.py:85} INFO - Job 23: Subtask MasterLayer.create_master
+[2023-05-04T08:07:37.047+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_data_pipeline.MasterLayer.create_master manual__2023-05-04T08:06:34.198063+00:00 [running]> on host 1ae395992ef5
+[2023-05-04T08:07:37.198+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Jesus Banda' AIRFLOW_CTX_DAG_ID='dag_data_pipeline' AIRFLOW_CTX_TASK_ID='MasterLayer.create_master' AIRFLOW_CTX_EXECUTION_DATE='2023-05-04T08:06:34.198063+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-04T08:06:34.198063+00:00'
+[2023-05-04T08:07:37.202+0000] {sql.py:262} INFO - Executing: 
+                CREATE TABLE IF NOT EXISTS master_titanic (
+                    id VARCHAR(50),
+                    full_name VARCHAR(50),
+                    title VARCHAR(10),
+                    survived VARCHAR(50),
+                    age VARCHAR(10),
+                    generation VARCHAR(20),
+                    genre VARCHAR(10),
+                    sibling_spouse VARCHAR(10),
+                    parent_child VARCHAR(10),
+                    ticket_price VARCHAR(10),
+                    embarked VARCHAR(20),
+                    load_date VARCHAR(10),
+                    load_datetime TIMESTAMP
+                )
+            
+[2023-05-04T08:07:37.215+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T08:07:37.327+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-05-04T08:07:37.344+0000] {sql.py:375} INFO - Running statement: 
+                CREATE TABLE IF NOT EXISTS master_titanic (
+                    id VARCHAR(50),
+                    full_name VARCHAR(50),
+                    title VARCHAR(10),
+                    survived VARCHAR(50),
+                    age VARCHAR(10),
+                    generation VARCHAR(20),
+                    genre VARCHAR(10),
+                    sibling_spouse VARCHAR(10),
+                    parent_child VARCHAR(10),
+                    ticket_price VARCHAR(10),
+                    embarked VARCHAR(20),
+                    load_date VARCHAR(10),
+                    load_datetime TIMESTAMP
+                )
+            , parameters: None
+[2023-05-04T08:07:37.372+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=dag_data_pipeline, task_id=MasterLayer.create_master, execution_date=20230504T080634, start_date=20230504T080736, end_date=20230504T080737
+[2023-05-04T08:07:37.421+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-04T08:07:37.470+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,104 @@
+[2023-05-04T08:06:50.711+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_data_pipeline.DataQuality.profiling manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:06:50.727+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_data_pipeline.DataQuality.profiling manual__2023-05-04T08:06:34.198063+00:00 [queued]>
+[2023-05-04T08:06:50.728+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 3
+[2023-05-04T08:06:50.755+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): DataQuality.profiling> on 2023-05-04 08:06:34.198063+00:00
+[2023-05-04T08:06:50.767+0000] {standard_task_runner.py:57} INFO - Started process 32616 to run task
+[2023-05-04T08:06:50.772+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_data_pipeline', 'DataQuality.profiling', 'manual__2023-05-04T08:06:34.198063+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpaagf8_mp']
+[2023-05-04T08:06:50.774+0000] {standard_task_runner.py:85} INFO - Job 19: Subtask DataQuality.profiling
+[2023-05-04T08:06:50.847+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_data_pipeline.DataQuality.profiling manual__2023-05-04T08:06:34.198063+00:00 [running]> on host 1ae395992ef5
+[2023-05-04T08:06:51.028+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Jesus Banda' AIRFLOW_CTX_DAG_ID='dag_data_pipeline' AIRFLOW_CTX_TASK_ID='DataQuality.profiling' AIRFLOW_CTX_EXECUTION_DATE='2023-05-04T08:06:34.198063+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-04T08:06:34.198063+00:00'
+[2023-05-04T08:06:51.085+0000] {logging_mixin.py:149} WARNING - Summarize dataset:   0%|          | 0/5 [00:00<?, ?it/s]
+[2023-05-04T08:06:51.308+0000] {logging_mixin.py:149} WARNING - Summarize dataset:   0%|          | 0/17 [00:00<?, ?it/s, Describe variable:SibSp]
+[2023-05-04T08:06:51.317+0000] {logging_mixin.py:149} WARNING - Summarize dataset:   6%|5         | 1/17 [00:00<00:03,  4.33it/s, Describe variable:SibSp]
+[2023-05-04T08:06:51.337+0000] {logging_mixin.py:149} WARNING - Summarize dataset:   6%|5         | 1/17 [00:00<00:03,  4.33it/s, Describe variable:Parch]
+[2023-05-04T08:06:51.356+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  12%|#1        | 2/17 [00:00<00:03,  4.33it/s, Describe variable:Age]  
+[2023-05-04T08:06:51.386+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  18%|#7        | 3/17 [00:00<00:03,  4.33it/s, Describe variable:PassengerId]
+[2023-05-04T08:06:51.872+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  24%|##3       | 4/17 [00:00<00:02,  4.33it/s, Describe variable:Fare]       
+[2023-05-04T08:06:51.887+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  29%|##9       | 5/17 [00:00<00:01,  6.42it/s, Describe variable:Fare]
+[2023-05-04T08:06:52.057+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  29%|##9       | 5/17 [00:00<00:01,  6.42it/s, Describe variable:Survived]
+[2023-05-04T08:06:52.074+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  35%|###5      | 6/17 [00:00<00:01,  6.13it/s, Describe variable:Survived]
+[2023-05-04T08:06:52.101+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  35%|###5      | 6/17 [00:01<00:01,  6.13it/s, Describe variable:Embarked]
+[2023-05-04T08:06:52.127+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  41%|####1     | 7/17 [00:01<00:01,  6.13it/s, Describe variable:Pclass]  
+[2023-05-04T08:06:52.155+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  47%|####7     | 8/17 [00:01<00:01,  6.13it/s, Describe variable:Sex]   
+[2023-05-04T08:06:52.176+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  53%|#####2    | 9/17 [00:01<00:00, 10.15it/s, Describe variable:Sex]
+[2023-05-04T08:06:52.188+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  53%|#####2    | 9/17 [00:01<00:00, 10.15it/s, Describe variable:Cabin]
+[2023-05-04T08:06:52.251+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  59%|#####8    | 10/17 [00:01<00:00, 10.15it/s, Describe variable:Ticket]
+[2023-05-04T08:06:52.285+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  65%|######4   | 11/17 [00:01<00:00, 10.15it/s, Describe variable:Name]  
+[2023-05-04T08:06:52.285+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  71%|#######   | 12/17 [00:01<00:00, 13.76it/s, Describe variable:Name]
+[2023-05-04T08:06:52.367+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  71%|#######   | 12/17 [00:01<00:00, 13.76it/s, Get variable types]    
+[2023-05-04T08:06:52.368+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  68%|######8   | 13/19 [00:01<00:00, 13.76it/s, Calculate auto correlation]
+[2023-05-04T08:06:52.745+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  74%|#######3  | 14/19 [00:01<00:00,  8.53it/s, Calculate auto correlation]
+[2023-05-04T08:06:52.745+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  74%|#######3  | 14/19 [00:01<00:00,  8.53it/s, Get scatter matrix]        
+[2023-05-04T08:06:52.746+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  32%|###1      | 14/44 [00:01<00:03,  8.53it/s, scatter PassengerId, PassengerId]
+[2023-05-04T08:06:53.059+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  34%|###4      | 15/44 [00:01<00:03,  8.53it/s, scatter Age, PassengerId]        
+[2023-05-04T08:06:53.342+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  36%|###6      | 16/44 [00:02<00:04,  5.90it/s, scatter Age, PassengerId]
+[2023-05-04T08:06:53.343+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  36%|###6      | 16/44 [00:02<00:04,  5.90it/s, scatter SibSp, PassengerId]
+[2023-05-04T08:06:53.600+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  39%|###8      | 17/44 [00:02<00:04,  5.90it/s, scatter Parch, PassengerId]
+[2023-05-04T08:06:53.846+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  41%|####      | 18/44 [00:02<00:05,  5.16it/s, scatter Parch, PassengerId]
+[2023-05-04T08:06:53.847+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  41%|####      | 18/44 [00:02<00:05,  5.16it/s, scatter Fare, PassengerId] 
+[2023-05-04T08:06:54.100+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  43%|####3     | 19/44 [00:03<00:05,  4.90it/s, scatter Fare, PassengerId]
+[2023-05-04T08:06:54.101+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  43%|####3     | 19/44 [00:03<00:05,  4.90it/s, scatter PassengerId, Age] 
+[2023-05-04T08:06:54.372+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  45%|####5     | 20/44 [00:03<00:05,  4.60it/s, scatter PassengerId, Age]
+[2023-05-04T08:06:54.373+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  45%|####5     | 20/44 [00:03<00:05,  4.60it/s, scatter Age, Age]        
+[2023-05-04T08:06:54.737+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  48%|####7     | 21/44 [00:03<00:05,  4.00it/s, scatter Age, Age]
+[2023-05-04T08:06:54.738+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  48%|####7     | 21/44 [00:03<00:05,  4.00it/s, scatter SibSp, Age]
+[2023-05-04T08:06:55.090+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  50%|#####     | 22/44 [00:04<00:06,  3.64it/s, scatter SibSp, Age]
+[2023-05-04T08:06:55.092+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  50%|#####     | 22/44 [00:04<00:06,  3.64it/s, scatter Parch, Age]
+[2023-05-04T08:06:55.445+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  52%|#####2    | 23/44 [00:04<00:06,  3.39it/s, scatter Parch, Age]
+[2023-05-04T08:06:55.446+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  52%|#####2    | 23/44 [00:04<00:06,  3.39it/s, scatter Fare, Age] 
+[2023-05-04T08:06:55.718+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  55%|#####4    | 24/44 [00:04<00:05,  3.46it/s, scatter Fare, Age]
+[2023-05-04T08:06:55.719+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  55%|#####4    | 24/44 [00:04<00:05,  3.46it/s, scatter PassengerId, SibSp]
+[2023-05-04T08:06:56.031+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  57%|#####6    | 25/44 [00:04<00:05,  3.38it/s, scatter PassengerId, SibSp]
+[2023-05-04T08:06:56.032+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  57%|#####6    | 25/44 [00:04<00:05,  3.38it/s, scatter Age, SibSp]        
+[2023-05-04T08:06:56.274+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  59%|#####9    | 26/44 [00:05<00:05,  3.56it/s, scatter Age, SibSp]
+[2023-05-04T08:06:56.274+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  59%|#####9    | 26/44 [00:05<00:05,  3.56it/s, scatter SibSp, SibSp]
+[2023-05-04T08:06:56.574+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  61%|######1   | 27/44 [00:05<00:04,  3.49it/s, scatter SibSp, SibSp]
+[2023-05-04T08:06:56.575+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  61%|######1   | 27/44 [00:05<00:04,  3.49it/s, scatter Parch, SibSp]
+[2023-05-04T08:06:56.933+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  64%|######3   | 28/44 [00:05<00:04,  3.25it/s, scatter Parch, SibSp]
+[2023-05-04T08:06:56.935+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  64%|######3   | 28/44 [00:05<00:04,  3.25it/s, scatter Fare, SibSp] 
+[2023-05-04T08:06:57.568+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  66%|######5   | 29/44 [00:06<00:06,  2.48it/s, scatter Fare, SibSp]
+[2023-05-04T08:06:57.569+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  66%|######5   | 29/44 [00:06<00:06,  2.48it/s, scatter PassengerId, Parch]
+[2023-05-04T08:06:57.810+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  68%|######8   | 30/44 [00:06<00:04,  2.81it/s, scatter PassengerId, Parch]
+[2023-05-04T08:06:57.811+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  68%|######8   | 30/44 [00:06<00:04,  2.81it/s, scatter Age, Parch]        
+[2023-05-04T08:06:58.061+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  70%|#######   | 31/44 [00:06<00:04,  3.08it/s, scatter Age, Parch]
+[2023-05-04T08:06:58.062+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  70%|#######   | 31/44 [00:06<00:04,  3.08it/s, scatter SibSp, Parch]
+[2023-05-04T08:06:58.316+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  73%|#######2  | 32/44 [00:07<00:03,  3.29it/s, scatter SibSp, Parch]
+[2023-05-04T08:06:58.317+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  73%|#######2  | 32/44 [00:07<00:03,  3.29it/s, scatter Parch, Parch]
+[2023-05-04T08:06:58.598+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  75%|#######5  | 33/44 [00:07<00:03,  3.36it/s, scatter Parch, Parch]
+[2023-05-04T08:06:58.599+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  75%|#######5  | 33/44 [00:07<00:03,  3.36it/s, scatter Fare, Parch] 
+[2023-05-04T08:06:58.880+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  77%|#######7  | 34/44 [00:07<00:02,  3.41it/s, scatter Fare, Parch]
+[2023-05-04T08:06:58.881+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  77%|#######7  | 34/44 [00:07<00:02,  3.41it/s, scatter PassengerId, Fare]
+[2023-05-04T08:06:59.130+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  80%|#######9  | 35/44 [00:08<00:02,  3.57it/s, scatter PassengerId, Fare]
+[2023-05-04T08:06:59.131+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  80%|#######9  | 35/44 [00:08<00:02,  3.57it/s, scatter Age, Fare]        
+[2023-05-04T08:06:59.374+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  82%|########1 | 36/44 [00:08<00:02,  3.71it/s, scatter Age, Fare]
+[2023-05-04T08:06:59.375+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  82%|########1 | 36/44 [00:08<00:02,  3.71it/s, scatter SibSp, Fare]
+[2023-05-04T08:06:59.750+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  84%|########4 | 37/44 [00:08<00:02,  3.32it/s, scatter SibSp, Fare]
+[2023-05-04T08:06:59.752+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  84%|########4 | 37/44 [00:08<00:02,  3.32it/s, scatter Parch, Fare]
+[2023-05-04T08:07:00.236+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  86%|########6 | 38/44 [00:09<00:02,  2.80it/s, scatter Parch, Fare]
+[2023-05-04T08:07:00.237+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  86%|########6 | 38/44 [00:09<00:02,  2.80it/s, scatter Fare, Fare] 
+[2023-05-04T08:07:00.586+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  89%|########8 | 39/44 [00:09<00:01,  2.82it/s, scatter Fare, Fare]
+[2023-05-04T08:07:00.587+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  89%|########8 | 39/44 [00:09<00:01,  2.82it/s, Get dataframe statistics]
+[2023-05-04T08:07:00.589+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  85%|########5 | 40/47 [00:09<00:02,  2.82it/s, Missing diagram bar]     
+[2023-05-04T08:07:01.064+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  87%|########7 | 41/47 [00:09<00:01,  3.32it/s, Missing diagram bar]
+[2023-05-04T08:07:01.065+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  87%|########7 | 41/47 [00:09<00:01,  3.32it/s, Missing diagram matrix]
+[2023-05-04T08:07:01.259+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  89%|########9 | 42/47 [00:10<00:01,  3.64it/s, Missing diagram matrix]
+[2023-05-04T08:07:01.261+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  89%|########9 | 42/47 [00:10<00:01,  3.64it/s, Missing diagram heatmap]
+[2023-05-04T08:07:01.539+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  91%|#########1| 43/47 [00:10<00:01,  3.62it/s, Missing diagram heatmap]
+[2023-05-04T08:07:01.540+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  91%|#########1| 43/47 [00:10<00:01,  3.62it/s, Take sample]            
+[2023-05-04T08:07:01.541+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  94%|#########3| 44/47 [00:10<00:00,  3.62it/s, Detecting duplicates]
+[2023-05-04T08:07:01.566+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  96%|#########5| 45/47 [00:10<00:00,  3.62it/s, Get alerts]          
+[2023-05-04T08:07:01.567+0000] {logging_mixin.py:149} WARNING - Summarize dataset:  98%|#########7| 46/47 [00:10<00:00,  3.62it/s, Get reproduction details]
+[2023-05-04T08:07:01.568+0000] {logging_mixin.py:149} WARNING - Summarize dataset: 100%|##########| 47/47 [00:10<00:00,  3.62it/s, Completed]               
+[2023-05-04T08:07:01.569+0000] {logging_mixin.py:149} WARNING - Summarize dataset: 100%|##########| 47/47 [00:10<00:00,  4.48it/s, Completed]
+[2023-05-04T08:07:01.570+0000] {logging_mixin.py:149} WARNING - Generate report structure:   0%|          | 0/1 [00:00<?, ?it/s]
+[2023-05-04T08:07:08.764+0000] {logging_mixin.py:149} WARNING - Generate report structure: 100%|##########| 1/1 [00:07<00:00,  7.19s/it]
+[2023-05-04T08:07:08.765+0000] {logging_mixin.py:149} WARNING - Generate report structure: 100%|##########| 1/1 [00:07<00:00,  7.20s/it]
+[2023-05-04T08:07:08.766+0000] {logging_mixin.py:149} WARNING - Render HTML:   0%|          | 0/1 [00:00<?, ?it/s]
+[2023-05-04T08:07:12.267+0000] {logging_mixin.py:149} WARNING - Render HTML: 100%|##########| 1/1 [00:03<00:00,  3.50s/it]
+[2023-05-04T08:07:12.267+0000] {logging_mixin.py:149} WARNING - Render HTML: 100%|##########| 1/1 [00:03<00:00,  3.50s/it]
+[2023-05-04T08:07:12.268+0000] {logging_mixin.py:149} WARNING - Export report to file:   0%|          | 0/1 [00:00<?, ?it/s]
+[2023-05-04T08:07:12.315+0000] {logging_mixin.py:149} WARNING - Export report to file: 100%|##########| 1/1 [00:00<00:00, 21.86it/s]
+[2023-05-04T08:07:12.319+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-05-04T08:07:12.347+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=dag_data_pipeline, task_id=DataQuality.profiling, execution_date=20230504T080634, start_date=20230504T080650, end_date=20230504T080712
+[2023-05-04T08:07:12.482+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-05-04T08:07:12.592+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
